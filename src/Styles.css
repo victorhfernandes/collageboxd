@@ -1,0 +1,21 @@
+body {
+  background-color: #14181c;
+}
+
+.moviePoster {
+  border-radius: 5px;
+  width: 125px;
+  height: 187px;
+}
+
+.flex-containner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.rating {
+  margin: 0;
+  font-size: 22px;
+  color: #6f7d8a;
+}
