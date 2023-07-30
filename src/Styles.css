@@ -1,5 +1,14 @@
 body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #14181c;
+  color: #6f7d8a;
+  font-family: Arial;
+}
+
+input {
+  all: unset;
 }
 
 .moviePoster {
@@ -9,13 +18,84 @@ body {
 }
 
 .flex-containner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 10px;
+  width: 675px;
+}
+
+.input-user,
+.input-month {
+  border: 1.5px solid #6f7d8a;
+  background-color: white;
+  padding-left: 8px;
+  border-radius: 10px;
+  font-size: 14px;
+  height: 25px;
+  color: black;
+}
+
+.input-user:focus,
+.input-month:focus {
+  border: 2px solid #00e054;
+}
+
+.button-submit,
+.button-download {
+  border: none;
+  background-color: #ff8000;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  margin-left: 8px;
+}
+
+.input-form {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .rating {
   margin: 0;
   font-size: 22px;
-  color: #6f7d8a;
+}
+
+.button-download {
+  margin-left: 0;
+}
+
+.flex-button,
+.loading {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.loading {
+  width: 75px;
+  height: 75px;
+  border: 15px solid #556677;
+  border-top-color: #40bcf4;
+  border-bottom-color: #ff8000;
+  border-right-color: #00e054;
+  border-radius: 50%;
+  margin: auto;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .loading {
+    animation: logo-spin infinite 3s linear;
+  }
 }
