@@ -7,6 +7,7 @@ import { FormEvent, useState, useRef } from "react";
 function App() {
   const [user, setUser] = useState("");
   const [month, setMonth] = useState("");
+  const [aux, setAux] = useState("");
   const [movies, setMovies] = useState([]);
   const [isLoading, setLoading] = useState(false);
   const divRef = useRef<HTMLDivElement>(null);
@@ -14,6 +15,7 @@ function App() {
   const handleSubmit = async (event: FormEvent) => {
     setLoading(true);
     setMovies([]);
+    setAux(month);
 
     event.preventDefault(); // prevent page refresh
 
@@ -46,7 +48,7 @@ function App() {
         <input
           className="input-month"
           type="number"
-          min="1"
+          min="0"
           max="12"
           placeholder="Month"
           value={month}
@@ -60,7 +62,7 @@ function App() {
       <div ref={divRef} className="flex-containner">
         <MovieGroup movies={movies} />
       </div>
-      <DonwloadHtml innerRef={divRef} />
+      <DonwloadHtml innerRef={divRef} date={aux} />
     </>
   );
 }

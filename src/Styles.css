@@ -13,15 +13,22 @@ input {
 
 .moviePoster {
   border-radius: 5px;
-  width: 125px;
-  height: 187px;
+  width: 250px;
+  height: 374px;
 }
 
 .flex-containner {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   column-gap: 10px;
-  width: 675px;
+  width: 1350px;
+  background-color: #14181c;
+}
+
+.flex-movie {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .input-user,
@@ -30,8 +37,8 @@ input {
   background-color: white;
   padding-left: 8px;
   border-radius: 10px;
-  font-size: 14px;
-  height: 25px;
+  font-size: 28px;
+  height: 50px;
   color: black;
 }
 
@@ -47,8 +54,20 @@ input {
   border-radius: 5px;
   color: white;
   font-weight: bold;
-  padding: 5px;
-  margin-left: 8px;
+  padding: 11px;
+  margin-left: 20px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.button-submit:hover,
+.button-download:hover {
+  opacity: 0.8;
+}
+
+.button-submit:active,
+.button-download:active {
+  opacity: 0.5;
 }
 
 .input-form {
@@ -60,11 +79,18 @@ input {
 
 .rating {
   margin: 0;
-  font-size: 22px;
+  font-size: 40px;
+}
+
+.heart-icon {
+  width: 40px;
 }
 
 .button-download {
   margin-left: 0;
+  padding: 25px 50px;
+  font-size: 25px;
+  margin-top: 30px;
 }
 
 .flex-button,
