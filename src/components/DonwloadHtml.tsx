@@ -8,14 +8,16 @@ interface Props {
 
 const DonwloadHtml = ({ innerRef, date }: Props) => {
   const ref = innerRef;
-  console.log(date);
 
   const onButtonClick = useCallback(() => {
     if (ref.current === null) {
       return;
     }
 
-    toPng(ref.current, { cacheBust: true })
+    toPng(ref.current, {
+      cacheBust: true,
+      backgroundColor: "#14181c",
+    })
       .then((dataUrl) => {
         const link = document.createElement("a");
         link.download = `collageboxd-${date}.png`;
