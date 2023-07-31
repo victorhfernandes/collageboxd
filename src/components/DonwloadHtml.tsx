@@ -3,10 +3,9 @@ import { toPng } from "html-to-image";
 
 interface Props {
   innerRef: RefObject<HTMLDivElement>;
-  date: string;
 }
 
-const DonwloadHtml = ({ innerRef, date }: Props) => {
+const DonwloadHtml = ({ innerRef }: Props) => {
   const ref = innerRef;
 
   const onButtonClick = useCallback(() => {
@@ -20,7 +19,7 @@ const DonwloadHtml = ({ innerRef, date }: Props) => {
     })
       .then((dataUrl) => {
         const link = document.createElement("a");
-        link.download = `collageboxd-${date}.png`;
+        link.download = `collageboxd.png`;
         link.href = dataUrl;
         link.click();
       })
