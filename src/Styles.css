@@ -1,7 +1,4 @@
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: #14181c;
   color: #6f7d8a;
   font-family: Arial;
@@ -9,6 +6,10 @@ body {
 
 input {
   all: unset;
+}
+
+#root {
+  margin: auto;
 }
 
 .moviePoster {
@@ -39,6 +40,10 @@ input {
   font-size: 14px;
   height: 25px;
   color: black;
+}
+
+.input-month {
+  width: 55px;
 }
 
 .input-user:focus,
@@ -120,6 +125,6 @@ input {
 
 @media (prefers-reduced-motion: no-preference) {
   .loading {
-    animation: logo-spin infinite 3s linear;
+    animation: logo-spin infinite 1s linear;
   }
 }
