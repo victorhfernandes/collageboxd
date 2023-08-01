@@ -17,18 +17,34 @@ input {
   width: 100%;
 }
 
-.flex-containner {
+.grid-containner {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  column-gap: 20px;
-  width: 675px;
-  padding: 50px;
+  column-gap: 2%;
+  padding: 5%;
 }
 
 .flex-movie {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  margin-top: 10%;
+}
+
+.heart-icon {
+  width: 16%;
+  margin-left: 3.5%;
+}
+
+.barbie-heart {
+  filter: invert(82%) sepia(33%) saturate(4534%) hue-rotate(278deg)
+    brightness(103%) contrast(101%);
+}
+
+.rating-icon {
+  width: 14%;
+  margin-right: 2%;
+  margin-top: 3%;
 }
 
 .input-user,
@@ -79,15 +95,6 @@ input {
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
-}
-
-.rating {
-  margin: 0;
-  font-size: 20px;
-}
-
-.heart-icon {
-  width: 20px;
 }
 
 .button-download {

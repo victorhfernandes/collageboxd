@@ -11,6 +11,8 @@ function App() {
   const [isLoading, setLoading] = useState(false);
   const divRef = useRef<HTMLDivElement>(null);
 
+  const url = "http://192.168.15.182:3000";
+
   const handleSubmit = async (event: FormEvent) => {
     setLoading(true);
     setMovies([]);
@@ -18,9 +20,7 @@ function App() {
     event.preventDefault(); // prevent page refresh
 
     try {
-      const response = await fetch(
-        `https://collageboxd-api.onrender.com/api/${user}/${month}`
-      );
+      const response = await fetch(`${url}/api/${user}/${month}`);
       const json = await response.json();
       setMovies(json);
     } catch (error) {
@@ -28,7 +28,6 @@ function App() {
     } finally {
       setLoading(false);
     }
-
     setUser("");
     setMonth("");
   };
@@ -57,7 +56,7 @@ function App() {
         </button>
       </form>
       {isLoading && <div className="loading"></div>}
-      <div ref={divRef} className="flex-containner">
+      <div ref={divRef} className="grid-containner">
         <MovieGroup movies={movies} />
       </div>
       <DonwloadHtml innerRef={divRef} />

@@ -1,6 +1,6 @@
-//import star from "../assets/star.png";
 import heart from "../assets/heart.png";
-//import half from "../assets/half.png";
+import half from "../assets/half.png";
+import Stars from "./Stars";
 
 interface Props {
   movies: Movie[];
@@ -8,9 +8,11 @@ interface Props {
 
 type Movie = {
   movieName: string;
-  movieRating: string;
+  movieRating: number;
   isLiked: number;
+  isHalf: boolean;
   moviePoster: string;
+  error: string;
 };
 
 function MovieGroup({ movies }: Props) {
@@ -22,10 +24,22 @@ function MovieGroup({ movies }: Props) {
             className="moviePoster"
             src={`https://image.tmdb.org/t/p/original/${item.moviePoster}`}
           />
-          <p className="rating">
-            {item.movieRating}{" "}
-            {item.isLiked ? <img className="heart-icon" src={heart} /> : ""}
-          </p>
+          <div>
+            <Stars contStars={item.movieRating} />
+            {item.isHalf ? <img className="rating-icon" src={half} /> : ""}
+            {item.isLiked ? (
+              <img
+                className={
+                  item.movieName === "Barbie"
+                    ? "heart-icon barbie-heart"
+                    : "heart-icon"
+                }
+                src={heart}
+              />
+            ) : (
+              ""
+            )}
+          </div>
         </div>
       ))}
     </>
