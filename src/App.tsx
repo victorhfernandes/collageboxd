@@ -11,7 +11,7 @@ function App() {
   const [isLoading, setLoading] = useState(false);
   const divRef = useRef<HTMLDivElement>(null);
 
-  const url = "http://192.168.15.182:3000";
+  const url = "https://collageboxd-api.onrender.com";
 
   const handleSubmit = async (event: FormEvent) => {
     setLoading(true);
@@ -56,9 +56,11 @@ function App() {
         </button>
       </form>
       {isLoading && <div className="loading"></div>}
+
       <div ref={divRef} className="grid-containner">
         <MovieGroup movies={movies} />
       </div>
+
       <DonwloadHtml innerRef={divRef} />
     </>
   );
