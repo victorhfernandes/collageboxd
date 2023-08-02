@@ -19,16 +19,16 @@ function MovieGroup({ movies }: Props) {
   return (
     <>
       {movies.map((item, index) => (
-        <div key={index}>
+        <div key={index} className="flex-movie">
           {item.error ? (
             <div className="error">{item.error}</div>
           ) : (
-            <div className="flex-movie">
+            <>
               <img
                 className="moviePoster"
-                src={`https://image.tmdb.org/t/p/original/${item.moviePoster}`}
+                src={`https://image.tmdb.org/t/p/w500${item.moviePoster}`}
               />
-              <div>
+              <div className="grid-rating">
                 <Stars contStars={item.movieRating} />
                 {item.isHalf ? <img className="rating-icon" src={half} /> : ""}
                 {item.isLiked ? (
@@ -44,7 +44,7 @@ function MovieGroup({ movies }: Props) {
                   ""
                 )}
               </div>
-            </div>
+            </>
           )}
         </div>
       ))}

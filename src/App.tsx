@@ -29,7 +29,6 @@ function App() {
       setLoading(false);
     }
 
-    setUser("");
     setMonth("");
   };
 
