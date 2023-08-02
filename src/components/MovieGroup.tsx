@@ -19,27 +19,33 @@ function MovieGroup({ movies }: Props) {
   return (
     <>
       {movies.map((item, index) => (
-        <div key={index} className="flex-movie">
-          <img
-            className="moviePoster"
-            src={`https://image.tmdb.org/t/p/original/${item.moviePoster}`}
-          />
-          <div>
-            <Stars contStars={item.movieRating} />
-            {item.isHalf ? <img className="rating-icon" src={half} /> : ""}
-            {item.isLiked ? (
+        <div key={index}>
+          {item.error ? (
+            <div className="error">{item.error}</div>
+          ) : (
+            <div className="flex-movie">
               <img
-                className={
-                  item.movieName === "Barbie"
-                    ? "heart-icon barbie-heart"
-                    : "heart-icon"
-                }
-                src={heart}
+                className="moviePoster"
+                src={`https://image.tmdb.org/t/p/original/${item.moviePoster}`}
               />
-            ) : (
-              ""
-            )}
-          </div>
+              <div>
+                <Stars contStars={item.movieRating} />
+                {item.isHalf ? <img className="rating-icon" src={half} /> : ""}
+                {item.isLiked ? (
+                  <img
+                    className={
+                      item.movieName === "Barbie"
+                        ? "heart-icon barbie-heart"
+                        : "heart-icon"
+                    }
+                    src={heart}
+                  />
+                ) : (
+                  ""
+                )}
+              </div>
+            </div>
+          )}
         </div>
       ))}
     </>

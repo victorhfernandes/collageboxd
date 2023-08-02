@@ -7,7 +7,7 @@ import { FormEvent, useState, useRef } from "react";
 function App() {
   const [user, setUser] = useState("");
   const [month, setMonth] = useState("");
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState<any[]>([]);
   const [isLoading, setLoading] = useState(false);
   const divRef = useRef<HTMLDivElement>(null);
 
@@ -28,6 +28,7 @@ function App() {
     } finally {
       setLoading(false);
     }
+
     setUser("");
     setMonth("");
   };
@@ -56,12 +57,10 @@ function App() {
         </button>
       </form>
       {isLoading && <div className="loading"></div>}
-
       <div ref={divRef} className="grid-containner">
         <MovieGroup movies={movies} />
       </div>
-
-      <DonwloadHtml innerRef={divRef} />
+      {movies.length >= 1 && <DonwloadHtml innerRef={divRef} />}
     </>
   );
 }

@@ -103,6 +103,12 @@ input {
   font-size: 12px;
 }
 
+.error {
+  font-size: 12px;
+  color: white;
+  text-align: center;
+}
+
 .flex-button,
 .loading {
   margin-top: 10px;
