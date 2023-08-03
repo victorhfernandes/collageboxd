@@ -1,4 +1,5 @@
 import star from "../assets/star.png";
+import nada from "../assets/nada.png";
 
 interface Props {
   contStars: number;
@@ -9,9 +10,14 @@ const Stars = ({ contStars }: Props) => {
   for (let i = 0; i < contStars; i++) {
     stars.push("rating-icon");
   }
+  if (!contStars) {
+    for (let i = 0; i < 5; i++) {
+      stars.push("rating-icon");
+    }
+  }
 
   return stars.map((item, index) => (
-    <img key={index} className={item} src={star} />
+    <img key={index} className={item} src={contStars ? star : nada} />
   ));
 };
 
