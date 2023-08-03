@@ -70,7 +70,6 @@ input {
   color: black;
   appearance: auto;
   box-sizing: border-box;
-  margin-right: 1px;
 }
 
 .input-user:focus,
@@ -110,6 +109,8 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 1px;
   margin-bottom: 10px;
 }
 

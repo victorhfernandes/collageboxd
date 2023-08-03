@@ -58,15 +58,6 @@ function App() {
         >
           <YearOption />
         </select>
-        {/*<input
-          className="input-month"
-          type="number"
-          min="0"
-          max="12"
-          placeholder="Month"
-          value={month}
-          onChange={(event) => setMonth(event.target.value)}
-  />*/}
         <button type="submit" className="button-submit">
           Submit
         </button>
