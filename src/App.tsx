@@ -1,13 +1,14 @@
 import DonwloadHtml from "./components/DonwloadHtml";
 import MovieGroup from "./components/MovieGroup";
+import SelectOption from "./components/SelectOption";
 //import './App.css'
 import "./Styles.css";
 import { FormEvent, useState, useRef } from "react";
 
 function App() {
   const [user, setUser] = useState("");
-  const [month, setMonth] = useState("");
-  const [movies, setMovies] = useState<any[]>([]);
+  const [period, setPeriod] = useState("0");
+  const [movies, setMovies] = useState([]);
   const [isLoading, setLoading] = useState(false);
   const divRef = useRef<HTMLDivElement>(null);
 
@@ -20,7 +21,7 @@ function App() {
     event.preventDefault(); // prevent page refresh
 
     try {
-      const response = await fetch(`${url}/api/${user}/${month}`);
+      const response = await fetch(`${url}/api/${user}/${period}`);
       const json = await response.json();
       setMovies(json);
     } catch (error) {
@@ -28,8 +29,6 @@ function App() {
     } finally {
       setLoading(false);
     }
-
-    setMonth("");
   };
 
   return (
@@ -42,7 +41,14 @@ function App() {
           onChange={(event) => setUser(event.target.value)}
           value={user}
         />
-        <input
+        <select
+          className="select-period"
+          value={period}
+          onChange={(event) => setPeriod(event.target.value)}
+        >
+          <SelectOption />
+        </select>
+        {/*<input
           className="input-month"
           type="number"
           min="0"
@@ -50,7 +56,7 @@ function App() {
           placeholder="Month"
           value={month}
           onChange={(event) => setMonth(event.target.value)}
-        />
+  />*/}
         <button type="submit" className="button-submit">
           Submit
         </button>
