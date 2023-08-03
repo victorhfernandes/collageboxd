@@ -4,6 +4,10 @@ body {
   font-family: Arial;
 }
 
+select {
+  all: unset;
+}
+
 input {
   all: unset;
 }
@@ -57,21 +61,25 @@ input {
 
 .input-user,
 .select-period {
-  border: 1.5px solid #6f7d8a;
+  border: 2px solid #6f7d8a;
   background-color: white;
-  padding-left: 8px;
+  padding: 3px 8px;
   border-radius: 10px;
   font-size: 14px;
-  height: 25px;
+  height: 28px;
   color: black;
-}
-
-.select-period {
-  height: 27px;
+  appearance: auto;
+  box-sizing: border-box;
+  margin-right: 1px;
 }
 
 .input-user:focus,
-.select-period:focus {
+.input-user:hover,
+.select-period:hover,
+.select-period:active,
+.select-period:focus,
+.button-submit:active,
+.button-download:active {
   border: 2px solid #00e054;
 }
 

@@ -1,4 +1,4 @@
-const SelectOption = () => {
+const PeriodOption = () => {
   const month = [
     "January",
     "February",
@@ -14,7 +14,6 @@ const SelectOption = () => {
     "December",
   ];
   const date = new Date();
-  console.log(date.getMonth());
 
   const option: string[] = [];
   for (let i = 0; i <= date.getMonth() + 1; i++) {
@@ -32,4 +31,4 @@ const SelectOption = () => {
   ));
 };
 
-export default SelectOption;
+export default PeriodOption;
