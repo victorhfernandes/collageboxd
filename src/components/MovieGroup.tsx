@@ -1,5 +1,4 @@
 import heart from "../assets/heart.png";
-import half from "../assets/half.png";
 import Stars from "./Stars";
 
 interface Props {
@@ -35,12 +34,10 @@ function MovieGroup({ movies, hideRating }: Props) {
                 <div className="no-poster">{item.movieName}</div>
               )}
               <div className={hideRating ? "grid-no-rating" : "grid-rating"}>
-                <Stars contStars={hideRating ? 0 : item.movieRating} />
-                {item.isHalf && !hideRating ? (
-                  <img className="rating-icon" src={half} />
-                ) : (
-                  ""
-                )}
+                <Stars
+                  contStars={hideRating ? 0 : item.movieRating}
+                  isHalf={hideRating ? false : item.isHalf}
+                />
                 {item.isLiked && !hideRating ? (
                   <img
                     className={

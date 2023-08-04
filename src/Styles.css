@@ -43,7 +43,6 @@ input {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-top: 10%;
 }
 
 .barbie-heart {
@@ -58,10 +57,11 @@ input {
 
 .rating-icon {
   width: 99%;
+  /*filter: invert(53%) sepia(8%) saturate(690%) hue-rotate(168deg) brightness(89%) contrast(90%);*/
 }
 
 .grid-rating {
-  margin-bottom: 10%;
+  margin-bottom: 20%;
 }
 
 .grid-rating,
@@ -70,7 +70,7 @@ input {
   margin-top: 2%;
   align-items: start;
   gap: 1%;
-  grid-template-columns: repeat(6, 1fr) 0.5fr;
+  grid-template-columns: 5fr 1fr 0.5fr;
 }
 
 .input-user,
