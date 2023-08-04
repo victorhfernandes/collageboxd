@@ -69,7 +69,6 @@ input {
   display: grid;
   margin-top: 2%;
   align-items: start;
-  gap: 1%;
   grid-template-columns: 5fr 1fr 0.5fr;
 }
 
