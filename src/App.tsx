@@ -25,7 +25,9 @@ function App() {
     event.preventDefault(); // prevent page refresh
 
     try {
-      const response = await fetch(`${url}/api/${user}&${period}&${year}`);
+      const response = await fetch(
+        `${url}/api/${user.trim()}&${period}&${year}`
+      );
       const json = await response.json();
       setMovies(json);
     } catch (error) {
