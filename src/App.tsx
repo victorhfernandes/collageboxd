@@ -11,6 +11,7 @@ function App() {
   const [user, setUser] = useState("");
   const [period, setPeriod] = useState(String(date.getMonth() + 1));
   const [year, setYear] = useState(String(date.getFullYear()));
+  const [hideRating, setHideRating] = useState(false);
   const [movies, setMovies] = useState([]);
   const [isLoading, setLoading] = useState(false);
   const divRef = useRef<HTMLDivElement>(null);
@@ -62,9 +63,17 @@ function App() {
           Submit
         </button>
       </form>
+      <label className="label-hide-rating">
+        <input
+          className="input-hide-rating"
+          type="checkbox"
+          onChange={(event) => setHideRating(event.target.checked)}
+        />
+        Hide Rating
+      </label>
       {isLoading && <div className="loading"></div>}
       <div ref={divRef} className="grid-containner">
-        <MovieGroup movies={movies} />
+        <MovieGroup movies={movies} hideRating={hideRating} />
       </div>
       {movies.length >= 1 && <DonwloadHtml innerRef={divRef} />}
     </>

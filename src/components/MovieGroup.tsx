@@ -4,6 +4,7 @@ import Stars from "./Stars";
 
 interface Props {
   movies: Movie[];
+  hideRating: boolean;
 }
 
 type Movie = {
@@ -15,11 +16,14 @@ type Movie = {
   error: string;
 };
 
-function MovieGroup({ movies }: Props) {
+function MovieGroup({ movies, hideRating }: Props) {
   return (
     <>
       {movies.map((item, index) => (
-        <div key={index} className="flex-movie">
+        <div
+          key={index}
+          className={hideRating ? "flex-movie-no-rating" : "flex-movie"}
+        >
           {item.error ? (
             <div className="error">{item.error}</div>
           ) : (
@@ -30,9 +34,13 @@ function MovieGroup({ movies }: Props) {
                 src={`https://image.tmdb.org/t/p/w500${item.moviePoster}`}
               />
               <div className="grid-rating">
-                <Stars contStars={item.movieRating} />
-                {item.isHalf ? <img className="rating-icon" src={half} /> : ""}
-                {item.isLiked ? (
+                <Stars contStars={hideRating ? 0 : item.movieRating} />
+                {item.isHalf && !hideRating ? (
+                  <img className="rating-icon" src={half} />
+                ) : (
+                  ""
+                )}
+                {item.isLiked && !hideRating ? (
                   <img
                     className={
                       item.movieName === "Barbie"

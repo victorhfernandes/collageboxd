@@ -10,6 +10,7 @@ select {
 
 input {
   all: unset;
+  appearance: auto;
 }
 
 #root {
@@ -35,6 +36,12 @@ input {
   flex-direction: column;
   justify-content: flex-start;
   margin-top: 10%;
+}
+
+.flex-movie-no-rating {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .barbie-heart {
@@ -80,6 +87,20 @@ input {
 .button-submit:active,
 .button-download:active {
   border: 2px solid #00e054;
+}
+
+.label-hide-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  font-size: 14px;
+  cursor: pointer;
+  color: white;
+}
+
+.input-hide-rating {
+  accent-color: #ff8000;
 }
 
 .button-submit,
