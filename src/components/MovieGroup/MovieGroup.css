@@ -27,21 +27,17 @@
   justify-content: flex-start;
 }
 
-.rating-text {
-  opacity: 0;
-}
-
-.div-rating {
-  margin-bottom: 20%;
-}
-
-.div-no-rating {
+.grid-rating {
   margin-bottom: 10%;
 }
 
-.div-rating,
-.div-no-rating {
-  position: relative;
+.grid-rating,
+.grid-no-rating {
+  display: grid;
+  margin-top: 2%;
+  align-items: start;
+  gap: 1%;
+  grid-template-columns: repeat(6, 1fr) 0.5fr;
 }
 
 .error {

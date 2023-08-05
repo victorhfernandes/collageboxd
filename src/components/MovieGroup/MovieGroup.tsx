@@ -35,8 +35,7 @@ function MovieGroup({ movies, hideRating }: Props) {
                   <span className="no-poster-text">{item.movieName}</span>
                 </div>
               )}
-              <div className={!hideRating ? "div-rating" : "div-no-rating"}>
-                <span className="rating-text">{item.movieRating || "0"}</span>
+              <div className={!hideRating ? "grid-rating" : "grid-no-rating"}>
                 <Rating
                   contStars={hideRating ? 0 : item.movieRating}
                   isHalf={hideRating ? false : item.isHalf}

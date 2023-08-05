@@ -28,21 +28,27 @@ const Stars = ({ contStars, isHalf, isLiked, movieName }: Props) => {
     }
   }
 
+  if (!contStars && !isLiked && !isHalf) {
+    for (i = 0; i < 5; i++) {
+      stars.push("nada-icon");
+    }
+  }
+
   for (i = 0; i < contStars; i++) {
-    stars.push(`star-icon rating-${i + 1}`);
+    stars.push(`star-icon`);
   }
 
   if (isHalf) {
-    stars.push(`half-icon rating-${i + 1}`);
+    stars.push(`half-icon`);
     i++;
   }
   if (isLiked) {
     const isAlone = i === 0 ? "" : "heart-left";
 
     if (movieName === "Barbie") {
-      stars.push(`heart-icon ${isAlone} rating-${i + 1} barbie-heart`);
+      stars.push(`heart-icon ${isAlone} barbie-heart`);
     } else {
-      stars.push(`heart-icon ${isAlone} rating-${i + 1}`);
+      stars.push(`heart-icon ${isAlone}`);
     }
     i++;
   }

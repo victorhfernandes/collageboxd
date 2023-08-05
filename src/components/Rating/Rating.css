@@ -4,68 +4,13 @@
 }
 
 .heart-left {
-  margin-left: 10%;
+  margin-left: 50%;
 }
 
 .heart-icon,
 .star-icon,
-.half-icon {
+.half-icon,
+.nada-icon {
   object-fit: contain;
-  width: 14%;
-  position: absolute;
-}
-
-.rating-1,
-.rating-2,
-.rating-3,
-.rating-4,
-.rating-5,
-.rating-6 {
-  top: 30%;
-}
-
-@media (max-width: 768px) {
-  .rating-1,
-  .rating-2,
-  .rating-3,
-  .rating-4,
-  .rating-5,
-  .rating-6 {
-    top: 20%;
-  }
-}
-
-@media (max-width: 480px) {
-  .rating-1,
-  .rating-2,
-  .rating-3,
-  .rating-4,
-  .rating-5,
-  .rating-6 {
-    top: 10%;
-  }
-}
-
-.rating-1 {
-  left: 0%;
-}
-
-.rating-2 {
-  left: 15%;
-}
-
-.rating-3 {
-  left: 30%;
-}
-
-.rating-4 {
-  left: 45%;
-}
-
-.rating-5 {
-  left: 60%;
-}
-
-.rating-6 {
-  left: 75%;
+  width: 100%;
 }
