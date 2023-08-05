@@ -40,7 +40,7 @@ const Stars = ({ contStars, isHalf, isLiked, movieName }: Props) => {
     const isAlone = i === 0 ? "" : "heart-left";
 
     if (movieName === "Barbie") {
-      stars.push(`heart-icon rating-${i + 1} barbie-heart`);
+      stars.push(`heart-icon ${isAlone} rating-${i + 1} barbie-heart`);
     } else {
       stars.push(`heart-icon ${isAlone} rating-${i + 1}`);
     }
