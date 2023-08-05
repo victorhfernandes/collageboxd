@@ -1,5 +1,5 @@
-import heart from "../assets/heart.png";
-import Stars from "./Stars";
+import Rating from "../Rating/Rating";
+import "./MovieGroup.css";
 
 interface Props {
   movies: Movie[];
@@ -31,25 +31,18 @@ function MovieGroup({ movies, hideRating }: Props) {
                   src={`https://image.tmdb.org/t/p/w500${item.moviePoster}`}
                 />
               ) : (
-                <div className="no-poster">{item.movieName}</div>
+                <div className="no-poster">
+                  <span className="no-poster-text">{item.movieName}</span>
+                </div>
               )}
-              <div className={hideRating ? "grid-no-rating" : "grid-rating"}>
-                <Stars
+              <div className={!hideRating ? "div-rating" : "div-no-rating"}>
+                <span className="rating-text">{item.movieRating || "0"}</span>
+                <Rating
                   contStars={hideRating ? 0 : item.movieRating}
                   isHalf={hideRating ? false : item.isHalf}
+                  isLiked={hideRating ? 0 : item.isLiked}
+                  movieName={item.movieName}
                 />
-                {item.isLiked && !hideRating ? (
-                  <img
-                    className={
-                      item.movieName === "Barbie"
-                        ? "heart-icon barbie-heart"
-                        : "heart-icon"
-                    }
-                    src={heart}
-                  />
-                ) : (
-                  ""
-                )}
               </div>
             </>
           )}

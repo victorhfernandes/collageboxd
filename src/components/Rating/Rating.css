@@ -1,0 +1,49 @@
+.barbie-heart {
+  filter: invert(73%) sepia(80%) saturate(1903%) hue-rotate(280deg)
+    brightness(104%) contrast(101%);
+}
+
+.heart-left {
+  margin-left: 10%;
+}
+
+.heart-icon,
+.star-icon,
+.half-icon {
+  object-fit: contain;
+  width: 14%;
+  position: absolute;
+}
+
+.rating-1,
+.rating-2,
+.rating-3,
+.rating-4,
+.rating-5,
+.rating-6 {
+  top: 30%;
+}
+
+.rating-1 {
+  left: 0%;
+}
+
+.rating-2 {
+  left: 15%;
+}
+
+.rating-3 {
+  left: 30%;
+}
+
+.rating-4 {
+  left: 45%;
+}
+
+.rating-5 {
+  left: 60%;
+}
+
+.rating-6 {
+  left: 75%;
+}

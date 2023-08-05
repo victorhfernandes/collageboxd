@@ -1,9 +1,8 @@
 import DonwloadHtml from "./components/DonwloadHtml";
-import MovieGroup from "./components/MovieGroup";
+import MovieGroup from "./components/MovieGroup/MovieGroup";
 import PeriodOption from "./components/PeriodOption";
 import YearOption from "./components/YearOption";
-//import './App.css'
-import "./Styles.css";
+import "./App.css";
 import { FormEvent, useState, useRef } from "react";
 
 function App() {
@@ -52,7 +51,7 @@ function App() {
           value={period}
           onChange={(event) => setPeriod(event.target.value)}
         >
-          <PeriodOption />
+          <PeriodOption year={year} />
         </select>
         <select
           className="select-period"
