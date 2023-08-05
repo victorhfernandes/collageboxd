@@ -19,8 +19,6 @@ const PeriodOption = ({ year }: Props) => {
   ];
   const date = new Date();
   const dateI = year === String(date.getFullYear()) ? date.getMonth() : 11;
-  console.log("year: " + year);
-  console.log("FullYear: " + date.getFullYear());
 
   const option: string[] = [];
   for (let i = 0; i <= dateI + 1; i++) {
