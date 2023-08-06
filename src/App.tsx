@@ -18,29 +18,33 @@ function App() {
   const url = "https://collageboxd-api.onrender.com";
 
   const handleSubmit = async (event: FormEvent) => {
-    setLoading(true);
-    setMovies([]);
-
     event.preventDefault(); // prevent page refresh
 
-    try {
-      const response = await fetch(
-        `${url}/api/${user.trim()}&${period}&${year}`
-      );
-      const json = await response.json();
-      setMovies(json);
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setLoading(false);
+    if (!user) {
+      alert("User is empty");
+    } else {
+      setLoading(true);
+      setMovies([]);
+
+      try {
+        const response = await fetch(
+          `${url}/api/${user.trim()}&${period}&${year}`
+        );
+        const json = await response.json();
+        setMovies(json);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
     }
   };
 
   return (
     <>
-    <span className="title">Collageboxd</span>
-    <span className="subtitle">Your Letterboxd collage generator</span>
-    <hr />
+      <span className="title">Collageboxd</span>
+      <span className="subtitle">Your Letterboxd collage generator</span>
+      <hr />
       <form className="input-form" onSubmit={handleSubmit}>
         <input
           className="input-user"
@@ -78,7 +82,9 @@ function App() {
       {isLoading && <div className="loading"></div>}
       <div ref={divRef} className="download-div">
         <MovieGroup movies={movies} hideRating={hideRating} />
-        {movies.length >= 1 && <span className="collage-text">made in collageboxd.vercel.app</span>}
+        {movies.length >= 1 && (
+          <span className="collage-text">made in collageboxd.vercel.app</span>
+        )}
       </div>
       {movies.length >= 1 && <DonwloadHtml innerRef={divRef} />}
     </>
