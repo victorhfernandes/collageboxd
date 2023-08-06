@@ -78,7 +78,7 @@ function App() {
       {isLoading && <div className="loading"></div>}
       <div ref={divRef} className="download-div">
         <MovieGroup movies={movies} hideRating={hideRating} />
-        <span className="collage-text">made in collageboxd.vercel.app</span>
+        {movies.length >= 1 && <span className="collage-text">made in collageboxd.vercel.app</span>}
       </div>
       {movies.length >= 1 && <DonwloadHtml innerRef={divRef} />}
     </>
