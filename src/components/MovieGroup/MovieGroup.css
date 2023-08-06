@@ -1,3 +1,9 @@
+.grid-containner {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 2%;
+}
+
 .moviePoster {
   border-radius: 5px;
   width: 100%;

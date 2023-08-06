@@ -17,16 +17,39 @@ input {
   margin: auto;
 }
 
-.grid-containner {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  column-gap: 2%;
+hr {
+  width: 400px;
+  border: 1px solid #556677;
+  border-radius: 10px;
+}
+
+@media (orientation: portrait) {
+  hr {
+    width: 90%;
+  }
+}
+
+.title, .subtitle {
+  display: block;
+  font-size: 40px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  margin-top: 2%;
+}
+
+.subtitle {
+  font-size: 20px;
+  margin-top: 0.2%;
+}
+
+.download-div {
   padding: 5%;
 }
 
 .input-user,
 .select-period {
-  border: 2px solid #6f7d8a;
+  border: 2px solid #556677;
   background-color: white;
   padding: 3px 8px;
   border-radius: 10px;
@@ -91,6 +114,13 @@ input {
   flex-wrap: wrap;
   gap: 1px;
   margin-bottom: 10px;
+}
+
+.collage-text {
+  display: block;
+  font-size: 1.5vw;
+  font-style: italic;
+  text-align: end;
 }
 
 .button-download {

@@ -38,6 +38,9 @@ function App() {
 
   return (
     <>
+    <span className="title">Collageboxd</span>
+    <span className="subtitle">Your Letterboxd collage generator</span>
+    <hr />
       <form className="input-form" onSubmit={handleSubmit}>
         <input
           className="input-user"
@@ -73,8 +76,9 @@ function App() {
         Hide Rating
       </label>
       {isLoading && <div className="loading"></div>}
-      <div ref={divRef} className="grid-containner">
+      <div ref={divRef} className="download-div">
         <MovieGroup movies={movies} hideRating={hideRating} />
+        <span className="collage-text">made in collageboxd.vercel.app</span>
       </div>
       {movies.length >= 1 && <DonwloadHtml innerRef={divRef} />}
     </>

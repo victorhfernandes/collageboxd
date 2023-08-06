@@ -17,7 +17,7 @@ type Movie = {
 
 function MovieGroup({ movies, hideRating }: Props) {
   return (
-    <>
+    <div className="grid-containner">
       {movies.map((item, index) => (
         <div key={index} className="flex-movie">
           {item.error ? (
@@ -47,7 +47,7 @@ function MovieGroup({ movies, hideRating }: Props) {
           )}
         </div>
       ))}
-    </>
+    </div>
   );
 }
 
