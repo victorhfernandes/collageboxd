@@ -1,0 +1,15 @@
+.separator {
+  padding: 0 30%;
+  margin: 25px 0;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid hsl(210, 17%, 40%);
+}
+
+@media (max-width: 900px) {
+  .separator {
+    padding: 0;
+  }
+}

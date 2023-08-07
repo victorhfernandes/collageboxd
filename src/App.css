@@ -17,19 +17,8 @@ input {
   margin: auto;
 }
 
-hr {
-  width: 400px;
-  border: 1px solid #556677;
-  border-radius: 10px;
-}
-
-@media (orientation: portrait) {
-  hr {
-    width: 90%;
-  }
-}
-
-.title, .subtitle {
+.title,
+.subtitle {
   display: block;
   font-size: 40px;
   font-weight: 600;
@@ -127,6 +116,12 @@ hr {
   margin-left: 0;
   padding: 12px 25px;
   font-size: 12px;
+}
+
+footer {
+  text-align: center;
+  margin-top: auto;
+  padding: 8px;
 }
 
 .flex-button,

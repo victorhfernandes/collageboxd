@@ -2,6 +2,8 @@ import DonwloadHtml from "./components/DonwloadHtml";
 import MovieGroup from "./components/MovieGroup/MovieGroup";
 import PeriodOption from "./components/PeriodOption";
 import YearOption from "./components/YearOption";
+import Footer from "./components/Footer/Footer";
+import Separator from "./components/Separator/Separator";
 import "./App.css";
 import { FormEvent, useState, useRef } from "react";
 
@@ -44,7 +46,7 @@ function App() {
     <>
       <span className="title">Collageboxd</span>
       <span className="subtitle">Your Letterboxd collage generator</span>
-      <hr />
+      <Separator />
       <form className="input-form" onSubmit={handleSubmit}>
         <input
           className="input-user"
@@ -83,10 +85,12 @@ function App() {
       <div ref={divRef} className="download-div">
         <MovieGroup movies={movies} hideRating={hideRating} />
         {movies.length >= 1 && (
-          <span className="collage-text">made in collageboxd.vercel.app</span>
+          <span className="collage-text">made with collageboxd.vercel.app</span>
         )}
       </div>
       {movies.length >= 1 && <DonwloadHtml innerRef={divRef} />}
+      <Separator />
+      <Footer />
     </>
   );
 }
