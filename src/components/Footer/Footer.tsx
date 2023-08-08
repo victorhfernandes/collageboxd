@@ -4,7 +4,9 @@ const Footer = () => {
   return (
     <footer>
       Made by{" "}
-      <a href="https://github.com/victorhfernandes">Victor Hugo Fernandes</a>
+      <a href="https://github.com/victorhfernandes" target="_blank">
+        Victor Hugo Fernandes
+      </a>
     </footer>
   );
 };
