@@ -3,9 +3,12 @@ import { toJpeg } from "html-to-image";
 
 interface Props {
   innerRef: RefObject<HTMLDivElement>;
+  user: string;
+  period: string;
+  year: string;
 }
 
-const DonwloadHtml = ({ innerRef }: Props) => {
+const DonwloadHtml = ({ innerRef, user, period, year }: Props) => {
   const ref = innerRef;
 
   const onButtonClick = useCallback(() => {
@@ -21,7 +24,7 @@ const DonwloadHtml = ({ innerRef }: Props) => {
     })
       .then((dataUrl) => {
         const link = document.createElement("a");
-        link.download = `collageboxd.jpeg`;
+        link.download = `collageboxd-${user}-${period}-${year}.jpeg`;
         link.href = dataUrl;
         link.click();
       })
