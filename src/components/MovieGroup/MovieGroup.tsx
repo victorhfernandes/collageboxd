@@ -17,13 +17,17 @@ type Movie = {
 
 function MovieGroup({ movies, hideRating }: Props) {
   return (
-    <div className="grid-containner">
+    <div
+      className={movies.length === 1 ? "grid-containner-1" : "grid-containner"}
+    >
       {movies.map((item, index) => (
-        <div key={index} className="flex-movie">
+        <div key={index}>
           {item.error ? (
             <div className="error">{item.error}</div>
           ) : (
-            <>
+            <div
+              className={movies.length === 1 ? "flex-movie-1" : "flex-movie"}
+            >
               {item.moviePoster ? (
                 <img
                   alt={item.movieName}
@@ -43,7 +47,7 @@ function MovieGroup({ movies, hideRating }: Props) {
                   movieName={item.movieName}
                 />
               </div>
-            </>
+            </div>
           )}
         </div>
       ))}
