@@ -17,12 +17,12 @@ const About = () => {
       </InfoItems>
       <InfoItems title="Small Screens">
         For some reason that I don't know (I’m work on it) when downloading the
-        collage on small screens the rating is stretched, there are two
-        solutions for this:
+        collage on small screens the rating and sometimes the poster get
+        stretched, there are two solutions for this:
         <ul>
           <li>
             Download the image without the ratings, selecting the Hide Rating
-            option
+            option.
           </li>
           <li>
             Put your mobile browser in{" "}
