@@ -1,3 +1,9 @@
+body {
+  background-color: #14181c;
+  color: #8e9caa;
+  font-family: Arial;
+}
+
 .about-containner,
 .contact-containner {
   justify-content: center;

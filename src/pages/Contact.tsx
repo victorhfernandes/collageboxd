@@ -1,5 +1,6 @@
-import InfoItems from "../../components/InfoItems/InfoItems";
-import Anchor from "../../components/Anchor/Anchor";
+import InfoItems from "../components/InfoItems/InfoItems";
+import Anchor from "../components/Anchor/Anchor";
+
 const Contact = () => {
   return (
     <div className="contact-containner">

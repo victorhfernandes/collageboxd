@@ -1,6 +1,5 @@
-import Anchor from "../../components/Anchor/Anchor";
-import InfoItems from "../../components/InfoItems/InfoItems";
-import "./About.css";
+import Anchor from "../components/Anchor/Anchor";
+import InfoItems from "../components/InfoItems/InfoItems";
 
 const About = () => {
   return (
