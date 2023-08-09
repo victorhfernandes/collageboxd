@@ -3,7 +3,7 @@ import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
-import Separator from "./components/Separator/Separator";
+import Contact from "./pages/Contact/Contact";
 
 const App = () => {
   return (
@@ -12,8 +12,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
-      <Separator />
       <Footer />
     </>
   );

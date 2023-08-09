@@ -1,13 +1,18 @@
-.about-items {
+.info-items {
   margin: 1%;
   margin-bottom: 20px;
 }
 
-.about-title {
+.info-title {
   display: block;
   text-align: center;
   font-size: 25px;
   font-weight: 600;
   margin-bottom: 20px;
   color: white;
+}
+
+.info-text span {
+  display: block;
+  text-align: center;
 }

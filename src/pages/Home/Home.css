@@ -13,10 +13,6 @@ input {
   appearance: auto;
 }
 
-#root {
-  margin: auto;
-}
-
 .title,
 .subtitle {
   display: block;

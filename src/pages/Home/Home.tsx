@@ -41,7 +41,7 @@ const Home = () => {
   };
 
   return (
-    <>
+    <div className="home-containner">
       <span className="title">Collageboxd</span>
       <span className="subtitle">Your Letterboxd collage generator</span>
       <form className="input-form" onSubmit={handleSubmit}>
@@ -86,7 +86,7 @@ const Home = () => {
         )}
       </div>
       {movies.length >= 1 && <DonwloadHtml innerRef={divRef} />}
-    </>
+    </div>
   );
 };
 

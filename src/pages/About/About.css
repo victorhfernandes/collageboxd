@@ -1,4 +1,5 @@
-.about-containner {
+.about-containner,
+.contact-containner {
   justify-content: center;
   align-items: center;
   display: flex;
