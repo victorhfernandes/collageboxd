@@ -45,27 +45,29 @@ const Home = () => {
       <span className="title">Collageboxd</span>
       <span className="subtitle">Your Letterboxd collage generator</span>
       <form className="input-form" onSubmit={handleSubmit}>
-        <input
-          className="input-user"
-          type="text"
-          placeholder="Letterboxd User"
-          onChange={(event) => setUser(event.target.value)}
-          value={user}
-        />
-        <select
-          className="select-period"
-          value={period}
-          onChange={(event) => setPeriod(event.target.value)}
-        >
-          <PeriodOption year={year} />
-        </select>
-        <select
-          className="select-period"
-          value={year}
-          onChange={(event) => setYear(event.target.value)}
-        >
-          <YearOption />
-        </select>
+        <div className="input-flex">
+          <input
+            className="input-user"
+            type="text"
+            placeholder="Letterboxd User"
+            onChange={(event) => setUser(event.target.value)}
+            value={user}
+          />
+          <select
+            className="select-period"
+            value={period}
+            onChange={(event) => setPeriod(event.target.value)}
+          >
+            <PeriodOption year={year} />
+          </select>
+          <select
+            className="select-period"
+            value={year}
+            onChange={(event) => setYear(event.target.value)}
+          >
+            <YearOption />
+          </select>
+        </div>
         <button type="submit" className="button-submit">
           Submit
         </button>
