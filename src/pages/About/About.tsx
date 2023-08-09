@@ -1,5 +1,5 @@
 import Anchor from "../../components/Anchor/Anchor";
-import "./about.css";
+import "./About.css";
 
 const About = () => {
   return (
