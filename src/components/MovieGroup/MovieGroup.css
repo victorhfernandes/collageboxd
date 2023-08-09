@@ -1,5 +1,6 @@
 .grid-containner,
-.grid-containner-1 {
+.grid-containner-1,
+.grid-containner-10 {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   column-gap: 2%;
@@ -7,6 +8,10 @@
 
 .grid-containner-1 {
   grid-template-columns: 1fr;
+}
+
+.grid-containner-10 {
+  grid-template-columns: repeat(10, 1fr);
 }
 
 .moviePoster {

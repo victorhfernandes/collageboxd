@@ -16,10 +16,18 @@ type Movie = {
 };
 
 function MovieGroup({ movies, hideRating }: Props) {
+  function gridNumber(length: number) {
+    if (length === 1) {
+      return "grid-containner-1";
+    }
+    if (length >= 50) {
+      return "grid-containner-10";
+    } else {
+      return "grid-containner";
+    }
+  }
   return (
-    <div
-      className={movies.length === 1 ? "grid-containner-1" : "grid-containner"}
-    >
+    <div className={gridNumber(movies.length)}>
       {movies.map((item, index) => (
         <div key={index}>
           {item.error ? (
