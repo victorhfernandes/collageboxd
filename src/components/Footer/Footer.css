@@ -1,8 +1,3 @@
-footer a {
-  color: #428bca;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
+.footer-text {
+  display: block;
 }

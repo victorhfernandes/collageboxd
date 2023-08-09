@@ -1,12 +1,24 @@
 import "./Footer.css";
+import Anchor from "../Anchor/Anchor";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer>
-      Made by{" "}
-      <a href="https://github.com/victorhfernandes" target="_blank">
-        Victor Hugo Fernandes
-      </a>
+      <span className="footer-text">
+        Made by{" "}
+        <Anchor
+          name="Victor Hugo Fernandes"
+          href="https://github.com/victorhfernandes"
+        />
+      </span>
+      <Link className="anchor" to="/">
+        Home
+      </Link>{" "}
+      |{" "}
+      <Link className="anchor" to="/about">
+        About
+      </Link>
     </footer>
   );
 };
