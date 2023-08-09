@@ -17,7 +17,7 @@ function App() {
   const [isLoading, setLoading] = useState(false);
   const divRef = useRef<HTMLDivElement>(null);
 
-  const url = "https://collageboxd-api.onrender.com";
+  const url = import.meta.env.VITE_URL;
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault(); // prevent page refresh
