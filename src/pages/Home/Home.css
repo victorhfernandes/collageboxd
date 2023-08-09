@@ -40,10 +40,10 @@ input {
 
 @media (max-width: 900px) {
   .input-user {
-    width: 96%;
+    width: 100%;
   }
   .select-period {
-    width: 48%;
+    width: 50%;
   }
 }
 
