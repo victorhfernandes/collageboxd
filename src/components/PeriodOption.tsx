@@ -4,6 +4,7 @@ interface Props {
 
 const PeriodOption = ({ year }: Props) => {
   const month = [
+    "All Year",
     "January",
     "February",
     "March",
@@ -22,11 +23,7 @@ const PeriodOption = ({ year }: Props) => {
 
   const option: string[] = [];
   for (let i = 0; i <= dateI + 1; i++) {
-    if (i === 0) {
-      option.push("All Year");
-      continue;
-    }
-    option.push(month[i - 1]);
+    option.push(month[i]);
   }
 
   return option.map((item, index) => (
