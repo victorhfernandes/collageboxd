@@ -85,7 +85,14 @@ const Home = () => {
           <span className="collage-text">made with collageboxd.vercel.app</span>
         )}
       </div>
-      {movies.length >= 1 && <DonwloadHtml innerRef={divRef} />}
+      {movies.length >= 1 && (
+        <DonwloadHtml
+          innerRef={divRef}
+          user={user}
+          period={period}
+          year={year}
+        />
+      )}
     </div>
   );
 };
