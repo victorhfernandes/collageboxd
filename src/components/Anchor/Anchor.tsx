@@ -1,14 +1,15 @@
+import { ReactNode } from "react";
 import "./Anchor.css";
 
 interface Props {
   href: string;
-  name: string;
+  children: ReactNode;
 }
 
-const A = ({ href, name }: Props) => {
+const A = ({ href, children }: Props) => {
   return (
     <a className="anchor" href={href} target="_blank">
-      {name}
+      {children}
     </a>
   );
 };

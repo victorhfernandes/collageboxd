@@ -7,10 +7,9 @@ const Footer = () => {
     <footer>
       <span className="footer-text">
         Made by{" "}
-        <Anchor
-          name="Victor Hugo Fernandes"
-          href="https://github.com/victorhfernandes"
-        />
+        <Anchor href="https://github.com/victorhfernandes">
+          Victor Hugo Fernandes
+        </Anchor>
       </span>
       <Link className="anchor" to="/">
         Home

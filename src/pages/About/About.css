@@ -1,13 +1,6 @@
-.about-div {
-  margin: 1%;
-  margin-bottom: 20px;
-}
-
-.about-title {
-  display: block;
-  text-align: center;
-  font-size: 25px;
-  font-weight: 600;
-  margin-bottom: 20px;
-  color: white;
+.about-containner {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
