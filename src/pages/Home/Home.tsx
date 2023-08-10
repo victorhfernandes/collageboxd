@@ -81,10 +81,6 @@ const Home = () => {
         />
         Hide Rating
       </label>
-      <Link className="small-screen" to="/about">
-        &#9888;if you are on a small screen read this&#9888;
-      </Link>
-
       {isLoading && <div className="loading"></div>}
       <div ref={divRef} className="download-div">
         <MovieGroup movies={movies} hideRating={hideRating} />
@@ -100,6 +96,9 @@ const Home = () => {
           year={year}
         />
       )}
+      <Link className="small-screen" to="/about">
+        &#9888;if you are on a small screen read this&#9888;
+      </Link>
     </div>
   );
 };
