@@ -24,7 +24,7 @@ const DonwloadHtml = ({ innerRef, user, period, year }: Props) => {
     })
       .then((dataUrl) => {
         const link = document.createElement("a");
-        link.download = `collageboxd-${user}-${period}-${year}.jpeg`;
+        link.download = `collageboxd-${user.trim()}-${period}-${year}.jpeg`;
         link.href = dataUrl;
         link.click();
       })
