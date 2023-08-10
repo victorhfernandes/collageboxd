@@ -42,9 +42,6 @@ input {
   .input-user {
     width: 100%;
   }
-  .select-period {
-    width: 50%;
-  }
 }
 
 .input-user:focus,
@@ -103,13 +100,21 @@ input {
   margin-bottom: 10px;
 }
 
+.input-flex {
+  display: flex;
+  gap: 1px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/*
 @media (min-width: 901px) {
   .input-flex {
     display: flex;
     gap: 1px;
   }
 }
-
+*/
 .collage-text {
   display: block;
   font-size: 1.5vw;
