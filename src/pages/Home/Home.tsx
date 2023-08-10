@@ -4,6 +4,7 @@ import PeriodOption from "../../components/PeriodOption";
 import YearOption from "../../components/YearOption";
 import "./Home.css";
 import { FormEvent, useState, useRef } from "react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const date = new Date();
@@ -80,6 +81,10 @@ const Home = () => {
         />
         Hide Rating
       </label>
+      <Link className="small-screen" to="/about">
+        &#9888;if you are on a small screen read this&#9888;
+      </Link>
+
       {isLoading && <div className="loading"></div>}
       <div ref={divRef} className="download-div">
         <MovieGroup movies={movies} hideRating={hideRating} />

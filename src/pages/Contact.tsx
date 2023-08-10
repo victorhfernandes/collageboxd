@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <div className="contact-containner">
       <InfoItems title="Contact Me">
-        If you want to reach me you can find me on{" "}
+        You can find me on{" "}
         <Anchor href="https://github.com/victorhfernandes">GitHub</Anchor>,
         <Anchor href="https://www.linkedin.com/in/victorhfernandes">
           {" "}
@@ -14,7 +14,7 @@ const Contact = () => {
         , <Anchor href="https://letterboxd.com/Victorh8010/">
           Letterboxd
         </Anchor>{" "}
-        or just send a email to{" "}
+        or send a email to{" "}
         <Anchor href="mailto:victorh.fernandes.o@gmail.com">
           victorh.fernandes.o@gmail.com
         </Anchor>
