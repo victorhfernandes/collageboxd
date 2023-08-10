@@ -16,8 +16,8 @@ const About = () => {
         in a month or in a year of your choice.
       </InfoItems>
       <InfoItems title="Small Screens">
-        For some reason that I don't know (I’m work on it) when downloading the
-        collage on small screens the ratings are stretched, there are two
+        For some reason that I don't know (I’m working on it) when downloading
+        the collage on small screens the ratings are stretched, there are two
         solutions for this:
         <ul>
           <li>

@@ -69,7 +69,7 @@ const Home = () => {
             <YearOption />
           </select>
         </div>
-        <button type="submit" className="button-submit">
+        <button disabled={isLoading} type="submit" className="button-submit">
           Submit
         </button>
       </form>
