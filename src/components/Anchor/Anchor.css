@@ -1,8 +1,8 @@
 .anchor {
-  color: #428bca;
+  color: #def;
   text-decoration: none;
 }
 
 .anchor:hover {
-  text-decoration: underline;
+  color: #428bca;
 }
