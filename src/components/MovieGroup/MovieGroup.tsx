@@ -44,7 +44,15 @@ function MovieGroup({ movies, hideRating }: Props) {
                 />
               ) : (
                 <div className="no-poster">
-                  <span className="no-poster-text">{item.movieName}</span>
+                  <span
+                    className={
+                      movies.length >= 50
+                        ? "no-poster-text-small"
+                        : "no-poster-text"
+                    }
+                  >
+                    {item.movieName}
+                  </span>
                 </div>
               )}
               <div className={!hideRating ? "grid-rating" : "grid-no-rating"}>

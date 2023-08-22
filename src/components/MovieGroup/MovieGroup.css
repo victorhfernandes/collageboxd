@@ -30,12 +30,17 @@
   position: relative;
 }
 
-.no-poster-text {
+.no-poster-text,
+.no-poster-text-small {
   position: absolute;
   font-size: 1.5vw;
   top: 2%;
   left: 3%;
   right: 3%;
+}
+
+.no-poster-text-small {
+  font-size: 1vw;
 }
 
 .flex-movie {
