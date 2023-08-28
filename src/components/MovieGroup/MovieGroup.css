@@ -12,6 +12,7 @@
 
 .grid-containner-10 {
   grid-template-columns: repeat(10, 1fr);
+  column-gap: 1%;
 }
 
 .moviePoster {
@@ -51,7 +52,7 @@
 }
 
 .flex-movie-1 {
-  width: 18%;
+  width: 18.4%;
 }
 
 .grid-rating {
