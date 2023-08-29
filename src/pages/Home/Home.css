@@ -40,7 +40,7 @@ input {
 
 @media (max-width: 900px) {
   .input-user {
-    width: 100%;
+    width: 85%;
   }
 }
 
