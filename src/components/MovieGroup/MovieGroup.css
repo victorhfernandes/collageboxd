@@ -56,13 +56,13 @@
 }
 
 .grid-rating {
+  margin-top: 2%;
   margin-bottom: 10%;
 }
 
 .grid-rating,
 .grid-no-rating {
   display: grid;
-  margin-top: 2%;
   align-items: start;
   gap: 1%;
   grid-template-columns: repeat(6, 1fr) 0.5fr;
