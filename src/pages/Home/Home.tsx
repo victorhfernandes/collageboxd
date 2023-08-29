@@ -45,7 +45,7 @@ const Home = () => {
     <div className="home-containner">
       <span className="title">Collageboxd</span>
       <span className="subtitle">Your Letterboxd collage generator</span>
-      <form className="input-form" onSubmit={handleSubmit} autoComplete="on">
+      <form className="input-form" onSubmit={handleSubmit}>
         <div className="input-flex">
           <input
             className="input-user"
@@ -54,6 +54,7 @@ const Home = () => {
             onChange={(event) => setUser(event.target.value)}
             value={user}
             autoComplete="on"
+            name="username"
           />
           <select
             className="select-period"
