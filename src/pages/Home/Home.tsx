@@ -8,9 +8,13 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   const date = new Date();
-  const [user, setUser] = useState("");
-  const [period, setPeriod] = useState(String(date.getMonth() + 1));
-  const [year, setYear] = useState(String(date.getFullYear()));
+  const [user, setUser] = useState(sessionStorage.getItem("user") || "");
+  const [period, setPeriod] = useState(
+    sessionStorage.getItem("period") || String(date.getMonth() + 1)
+  );
+  const [year, setYear] = useState(
+    sessionStorage.getItem("year") || String(date.getFullYear())
+  );
   const [hideRating, setHideRating] = useState(false);
   const [movies, setMovies] = useState([]);
   const [isLoading, setLoading] = useState(false);
@@ -23,7 +27,21 @@ const Home = () => {
 
     if (!user) {
       alert("User is empty");
+    } else if (
+      user === sessionStorage.getItem("user") &&
+      period === sessionStorage.getItem("period") &&
+      year === sessionStorage.getItem("year")
+    ) {
+      setLoading(true);
+      setMovies([]);
+      setTimeout(() => {
+        setLoading(false);
+        setMovies(JSON.parse(sessionStorage.getItem("movies") || "[]"));
+      }, 500);
     } else {
+      sessionStorage.setItem("user", user);
+      sessionStorage.setItem("period", period);
+      sessionStorage.setItem("year", year);
       setLoading(true);
       setMovies([]);
 
@@ -33,6 +51,7 @@ const Home = () => {
         );
         const json = await response.json();
         setMovies(json);
+        sessionStorage.setItem("movies", JSON.stringify(json));
       } catch (error) {
         console.error(error);
       } finally {
