@@ -37,7 +37,7 @@ const Home = () => {
       setTimeout(() => {
         setLoading(false);
         setMovies(JSON.parse(sessionStorage.getItem("movies") || "[]"));
-      }, 500);
+      }, 250);
     } else {
       sessionStorage.setItem("user", user);
       sessionStorage.setItem("period", period);
