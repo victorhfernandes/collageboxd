@@ -14,10 +14,7 @@ const Contact = () => {
         , <Anchor href="https://letterboxd.com/Victorh8010/">
           Letterboxd
         </Anchor>{" "}
-        or send a email to{" "}
-        <Anchor href="mailto:victorh.fernandes.o@gmail.com">
-          victorh.fernandes.o@gmail.com
-        </Anchor>
+        or <Anchor href="mailto:victorh.fernandes.o@gmail.com">email me</Anchor>
         .
       </InfoItems>
       <InfoItems title="Missing Posters">
