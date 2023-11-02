@@ -5,11 +5,8 @@ const About = () => {
   return (
     <div className="about-containner">
       <InfoItems title="About Collageboxd">
-        I love watching movies and keeping track of it on{" "}
-        <Anchor href="https://letterboxd.com/Victorh8010/">
-          my Letterboxd
-        </Anchor>
-        , inspired by projects like{" "}
+        I love watching movies and keeping track of it on my Letterboxd,
+        inspired by projects like{" "}
         <Anchor href="https://receiptify.herokuapp.com/">Receiptify</Anchor> and{" "}
         <Anchor href="https://tapmusic.net/">Tapmusic</Anchor> i decided to make
         this project that creates an image of what you have logged on Letterboxd

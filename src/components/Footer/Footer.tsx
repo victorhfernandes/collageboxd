@@ -11,7 +11,7 @@ const Footer = () => {
       <footer>
         <span className="footer-text">
           Made by{" "}
-          <Anchor href="https://github.com/victorhfernandes">
+          <Anchor href="https://letterboxd.com/Victorh8010/">
             Victor Hugo Fernandes
           </Anchor>
         </span>
