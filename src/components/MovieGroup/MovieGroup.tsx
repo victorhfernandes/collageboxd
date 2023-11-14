@@ -4,6 +4,7 @@ import "./MovieGroup.css";
 interface Props {
   movies: Movie[];
   hideRating: boolean;
+  hideDuplicate: boolean;
 }
 
 type Movie = {
@@ -15,7 +16,14 @@ type Movie = {
   error: string;
 };
 
-function MovieGroup({ movies, hideRating }: Props) {
+function MovieGroup({ movies, hideRating, hideDuplicate }: Props) {
+  function uniqByKeepLast(data: Movie[], key: any) {
+    return [...new Map(data.map((x) => [key(x), x])).values()];
+  }
+  if (hideDuplicate) {
+    movies = uniqByKeepLast(movies, (it: Movie) => it.movieName);
+  }
+
   function gridNumber(length: number) {
     if (length === 1) {
       return "grid-containner-1";

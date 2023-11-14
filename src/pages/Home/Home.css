@@ -86,14 +86,19 @@ input {
   margin-bottom: 10px;
 }
 
-.input-flex {
+.input-flex,
+.input-hide-flex {
   display: flex;
   gap: 1px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.label-hide-rating {
+.input-hide-flex {
+  gap: 10px;
+}
+
+.label-hide {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -104,7 +109,7 @@ input {
   margin-top: 26px;
 }
 
-.input-hide-rating {
+.input-hide {
   accent-color: #ff8000;
 }
 

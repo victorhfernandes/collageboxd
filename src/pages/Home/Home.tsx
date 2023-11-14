@@ -16,6 +16,7 @@ const Home = () => {
     sessionStorage.getItem("year") || String(date.getFullYear())
   );
   const [hideRating, setHideRating] = useState(false);
+  const [hideDuplicate, setHideDuplicate] = useState(false);
   const [movies, setMovies] = useState([]);
   const [isLoading, setLoading] = useState(false);
   const divRef = useRef<HTMLDivElement>(null);
@@ -94,17 +95,31 @@ const Home = () => {
           Submit
         </button>
       </form>
-      <label className="label-hide-rating">
-        <input
-          className="input-hide-rating"
-          type="checkbox"
-          onChange={(event) => setHideRating(event.target.checked)}
-        />
-        Hide Rating
-      </label>
+      <div className="input-hide-flex">
+        <label className="label-hide">
+          <input
+            className="input-hide"
+            type="checkbox"
+            onChange={(event) => setHideRating(event.target.checked)}
+          />
+          Hide Rating
+        </label>
+        <label className="label-hide">
+          <input
+            className="input-hide"
+            type="checkbox"
+            onChange={(event) => setHideDuplicate(event.target.checked)}
+          />
+          Hide Duplicate
+        </label>
+      </div>
       {isLoading && <div className="loading"></div>}
       <div ref={divRef} className="download-div">
-        <MovieGroup movies={movies} hideRating={hideRating} />
+        <MovieGroup
+          movies={movies}
+          hideRating={hideRating}
+          hideDuplicate={hideDuplicate}
+        />
         {movies.length >= 1 && (
           <span className="collage-text">made with collageboxd.vercel.app</span>
         )}
