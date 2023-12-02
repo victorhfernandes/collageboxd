@@ -11,12 +11,12 @@ interface Props {
 const DonwloadHtml = ({ innerRef, user, period, year }: Props) => {
   const ref = innerRef;
 
-  const onButtonClick = useCallback(() => {
+  const onButtonClick = useCallback(async () => {
     if (ref.current === null) {
       return;
     }
 
-    toPng(ref.current, {
+    await toPng(ref.current, {
       cacheBust: true,
       backgroundColor: "#14181c",
       canvasWidth: ref.current.offsetWidth * 2,
