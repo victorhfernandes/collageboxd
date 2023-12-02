@@ -1,5 +1,6 @@
 import { useCallback, RefObject } from "react";
 import { toPng } from "html-to-image";
+import { IS_SAFARI } from "../utils";
 
 interface Props {
   innerRef: RefObject<HTMLDivElement>;
@@ -16,6 +17,33 @@ const DonwloadHtml = ({ innerRef, user, period, year }: Props) => {
       return;
     }
 
+    if (IS_SAFARI) {
+      for (let i = 0; i < 4; i++) {
+        await toPng(ref.current, {
+          cacheBust: true,
+          backgroundColor: "#14181c",
+          canvasWidth: ref.current.offsetWidth * 2,
+          canvasHeight: ref.current.offsetHeight * 2,
+        });
+      }
+    }
+
+    const dataUrl = await toPng(ref.current, {
+      cacheBust: true,
+      backgroundColor: "#14181c",
+      canvasWidth: ref.current.offsetWidth * 2,
+      canvasHeight: ref.current.offsetHeight * 2,
+    });
+    try {
+      const link = document.createElement("a");
+      link.download = `collageboxd-${user.trim()}-${period}-${year}.png`;
+      link.href = dataUrl;
+      link.click();
+    } catch (err) {
+      console.log(err);
+    }
+
+    /*
     toPng(ref.current, {
       cacheBust: true,
       backgroundColor: "#14181c",
@@ -23,16 +51,14 @@ const DonwloadHtml = ({ innerRef, user, period, year }: Props) => {
       canvasHeight: ref.current.offsetHeight * 2,
     })
       .then((dataUrl) => {
-        setTimeout(() => {
-          const link = document.createElement("a");
-          link.download = `collageboxd-${user.trim()}-${period}-${year}.png`;
-          link.href = dataUrl;
-          link.click();
-        }, 5000);
+        const link = document.createElement("a");
+        link.download = `collageboxd-${user.trim()}-${period}-${year}.png`;
+        link.href = dataUrl;
+        link.click();
       })
       .catch((err) => {
         console.log(err);
-      });
+      });*/
   }, [ref]);
 
   return (

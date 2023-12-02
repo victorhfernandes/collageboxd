@@ -5,10 +5,13 @@ import YearOption from "../../components/YearOption";
 import "./Home.css";
 import { FormEvent, useState, useRef } from "react";
 import { Link } from "react-router-dom";
+import { IS_SAFARI } from "../../utils";
 
 const Home = () => {
   const date = new Date();
-  const [user, setUser] = useState(sessionStorage.getItem("user") || "");
+  const [user, setUser] = useState(
+    sessionStorage.getItem("user") || "victorh8010"
+  );
   const [period, setPeriod] = useState(
     sessionStorage.getItem("period") || String(date.getMonth() + 1)
   );
@@ -132,6 +135,8 @@ const Home = () => {
           year={year}
         />
       )}
+      {IS_SAFARI && <span className="subtitle">you are on Safari</span>}
+
       <Link className="small-screen" to="/about">
         &#9888;if you are on a small screen read this&#9888;
       </Link>
