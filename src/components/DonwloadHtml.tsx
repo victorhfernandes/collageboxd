@@ -1,5 +1,5 @@
 import { useCallback, RefObject } from "react";
-import { toJpeg } from "html-to-image";
+import { toPng } from "html-to-image";
 
 interface Props {
   innerRef: RefObject<HTMLDivElement>;
@@ -16,7 +16,7 @@ const DonwloadHtml = ({ innerRef, user, period, year }: Props) => {
       return;
     }
 
-    toJpeg(ref.current, {
+    toPng(ref.current, {
       cacheBust: true,
       backgroundColor: "#14181c",
       canvasWidth: ref.current.offsetWidth * 2,
@@ -24,7 +24,7 @@ const DonwloadHtml = ({ innerRef, user, period, year }: Props) => {
     })
       .then((dataUrl) => {
         const link = document.createElement("a");
-        link.download = `collageboxd-${user.trim()}-${period}-${year}.jpeg`;
+        link.download = `collageboxd-${user.trim()}-${period}-${year}.png`;
         link.href = dataUrl;
         link.click();
       })
