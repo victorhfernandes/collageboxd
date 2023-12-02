@@ -64,8 +64,8 @@ const Home = () => {
 
   return (
     <div className="home-containner">
-      <span className="title">Collageteste</span>
-      <span className="subtitle">test page use for test</span>
+      <span className="title">Collageboxd</span>
+      <span className="subtitle">Your Letterboxd collage generator</span>
       <form className="input-form" onSubmit={handleSubmit}>
         <div className="input-flex">
           <input
@@ -133,11 +133,11 @@ const Home = () => {
           year={year}
         />
       )}
-      {IS_SAFARI && <span className="subtitle">you are on Safari</span>}
-
-      <Link className="small-screen" to="/about">
-        &#9888;if you are on a small screen read this&#9888;
-      </Link>
+      {IS_SAFARI && period === "0" && (
+        <Link className="warning" to="/about">
+          &#9888;All Year doesn't work on Safari&#9888;
+        </Link>
+      )}
     </div>
   );
 };

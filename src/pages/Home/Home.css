@@ -113,18 +113,13 @@ input {
   accent-color: #ff8000;
 }
 
-.small-screen {
+.warning {
   display: block;
+  font-weight: bold;
   text-align: center;
   color: #00e054;
   margin: 8px 0;
   text-decoration: none;
-}
-
-@media (min-width: 901px) {
-  .small-screen {
-    visibility: hidden;
-  }
 }
 
 .collage-text {

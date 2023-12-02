@@ -42,23 +42,6 @@ const DonwloadHtml = ({ innerRef, user, period, year }: Props) => {
     } catch (err) {
       console.log(err);
     }
-
-    /*
-    toPng(ref.current, {
-      cacheBust: true,
-      backgroundColor: "#14181c",
-      canvasWidth: ref.current.offsetWidth * 2,
-      canvasHeight: ref.current.offsetHeight * 2,
-    })
-      .then((dataUrl) => {
-        const link = document.createElement("a");
-        link.download = `collageboxd-${user.trim()}-${period}-${year}.png`;
-        link.href = dataUrl;
-        link.click();
-      })
-      .catch((err) => {
-        console.log(err);
-      });*/
   }, [ref]);
 
   return (
