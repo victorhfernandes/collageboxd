@@ -9,9 +9,7 @@ import { IS_SAFARI } from "../../utils";
 
 const Home = () => {
   const date = new Date();
-  const [user, setUser] = useState(
-    sessionStorage.getItem("user") || "victorh8010"
-  );
+  const [user, setUser] = useState(sessionStorage.getItem("user") || "");
   const [period, setPeriod] = useState(
     sessionStorage.getItem("period") || String(date.getMonth() + 1)
   );
