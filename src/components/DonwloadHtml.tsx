@@ -16,17 +16,19 @@ const DonwloadHtml = ({ innerRef, user, period, year }: Props) => {
       return;
     }
 
-    await toPng(ref.current, {
+    toPng(ref.current, {
       cacheBust: true,
       backgroundColor: "#14181c",
       canvasWidth: ref.current.offsetWidth * 2,
       canvasHeight: ref.current.offsetHeight * 2,
     })
       .then((dataUrl) => {
-        const link = document.createElement("a");
-        link.download = `collageboxd-${user.trim()}-${period}-${year}.png`;
-        link.href = dataUrl;
-        link.click();
+        setTimeout(() => {
+          const link = document.createElement("a");
+          link.download = `collageboxd-${user.trim()}-${period}-${year}.png`;
+          link.href = dataUrl;
+          link.click();
+        }, 5000);
       })
       .catch((err) => {
         console.log(err);
