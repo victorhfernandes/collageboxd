@@ -63,8 +63,8 @@ const Home = () => {
 
   return (
     <div className="home-containner">
-      <span className="title">Collageboxd</span>
-      <span className="subtitle">Your Letterboxd collage generator</span>
+      <span className="title">Collageteste</span>
+      <span className="subtitle">test page use for test</span>
       <form className="input-form" onSubmit={handleSubmit}>
         <div className="input-flex">
           <input
