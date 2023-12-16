@@ -102,63 +102,66 @@ const Home = () => {
           Submit
         </button>
       </form>
-      <div className="input-hide-flex">
-        <span className="label-hide">Design: </span>
-        <label className="label-hide">
-          <input
-            className="input-hide"
-            type="radio"
-            name="design"
-            value="simple"
-            checked={"simple" === design}
-            onChange={(event) => setDesign(event.target.value)}
-          />
-          Simple
-        </label>
-        {sessionStorage.getItem("period") !== "0" && (
-          <label className="label-hide">
-            <input
-              className="input-hide"
-              type="radio"
-              name="design"
-              value="calendar"
-              checked={"calendar" === design}
-              onChange={(event) => setDesign(event.target.value)}
-            />
-            Calendar
-          </label>
-        )}
-      </div>
-      <div className="input-hide-flex">
-        <span className="label-hide">Hide: </span>
-        <label className="label-hide">
-          <input
-            className="input-hide"
-            type="checkbox"
-            onChange={(event) => setHideRating(event.target.checked)}
-          />
-          Rating
-        </label>
-        {design !== "calendar" && (
-          <label className="label-hide">
-            <input
-              className="input-hide"
-              type="checkbox"
-              onChange={(event) => setHideDuplicate(event.target.checked)}
-            />
-            Duplicate
-          </label>
-        )}
-        <label className="label-hide">
-          <input
-            className="input-hide"
-            type="checkbox"
-            onChange={(event) => setHideWatched(event.target.checked)}
-          />
-          Nº Watched
-        </label>
-      </div>
-
+      {movies.length >= 1 && (
+        <div className="options">
+          <div className="input-hide-flex">
+            <span className="label-hide">Design: </span>
+            <label className="label-hide">
+              <input
+                className="input-hide"
+                type="radio"
+                name="design"
+                value="simple"
+                checked={"simple" === design}
+                onChange={(event) => setDesign(event.target.value)}
+              />
+              Simple
+            </label>
+            {sessionStorage.getItem("period") !== "0" && (
+              <label className="label-hide">
+                <input
+                  className="input-hide"
+                  type="radio"
+                  name="design"
+                  value="calendar"
+                  checked={"calendar" === design}
+                  onChange={(event) => setDesign(event.target.value)}
+                />
+                Calendar
+              </label>
+            )}
+          </div>
+          <div className="input-hide-flex">
+            <span className="label-hide">Hide: </span>
+            <label className="label-hide">
+              <input
+                className="input-hide"
+                type="checkbox"
+                onChange={(event) => setHideRating(event.target.checked)}
+              />
+              Rating
+            </label>
+            {design !== "calendar" && (
+              <label className="label-hide">
+                <input
+                  className="input-hide"
+                  type="checkbox"
+                  onChange={(event) => setHideDuplicate(event.target.checked)}
+                />
+                Duplicate
+              </label>
+            )}
+            <label className="label-hide">
+              <input
+                className="input-hide"
+                type="checkbox"
+                onChange={(event) => setHideWatched(event.target.checked)}
+              />
+              Nº Watched
+            </label>
+          </div>
+        </div>
+      )}
       {isLoading && <div className="loading"></div>}
 
       <div ref={divRef} className="download-div">
