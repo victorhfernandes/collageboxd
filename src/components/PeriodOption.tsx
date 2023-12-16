@@ -1,23 +1,10 @@
+import { month } from "../utils";
+
 interface Props {
   year: string;
 }
 
 const PeriodOption = ({ year }: Props) => {
-  const month = [
-    "All Year",
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
   const date = new Date();
   const dateI = year === String(date.getFullYear()) ? date.getMonth() : 11;
 

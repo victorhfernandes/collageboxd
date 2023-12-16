@@ -3,7 +3,6 @@
 .grid-containner-10 {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  column-gap: 2%;
 }
 
 .grid-containner-1 {
@@ -12,6 +11,13 @@
 
 .grid-containner-10 {
   grid-template-columns: repeat(10, 1fr);
+}
+
+.grid-gap {
+  column-gap: 2%;
+}
+
+.grid-gap-10 {
   column-gap: 1%;
 }
 
@@ -55,6 +61,11 @@
   width: 18.4%;
 }
 
+.flex-movie-border {
+  border: 1px solid #556677;
+  padding: 0px 8%;
+}
+
 .grid-rating {
   margin-top: 2%;
   margin-bottom: 10%;
@@ -72,4 +83,11 @@
   font-size: 16px;
   color: white;
   text-align: center;
+}
+
+.calendar-number {
+  font-size: 2.5vw;
+  font-weight: 100;
+  text-align: center;
+  padding: 3% 0;
 }

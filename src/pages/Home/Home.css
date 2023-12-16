@@ -113,6 +113,34 @@ input {
   accent-color: #ff8000;
 }
 
+.calendar-header,
+.films-watched-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 0.2%;
+}
+
+.calendar-period {
+  font-weight: 300;
+  font-size: 3vw;
+}
+
+.calendar-year,
+.films-watched {
+  font-size: 2.5vw;
+  font-weight: 100;
+}
+
+.films-watched {
+  padding-bottom: 0.5%;
+}
+
+.films-watched-header {
+  justify-content: center;
+  padding-bottom: 1.5%;
+}
+
 .warning {
   display: block;
   font-weight: bold;
@@ -127,6 +155,7 @@ input {
   font-size: 1.5vw;
   font-style: italic;
   text-align: end;
+  padding-top: 5px;
 }
 
 footer {

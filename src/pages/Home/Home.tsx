@@ -5,7 +5,7 @@ import YearOption from "../../components/YearOption";
 import "./Home.css";
 import { FormEvent, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import { IS_SAFARI } from "../../utils";
+import { IS_SAFARI, month } from "../../utils";
 
 const Home = () => {
   const date = new Date();
@@ -18,6 +18,8 @@ const Home = () => {
   );
   const [hideRating, setHideRating] = useState(false);
   const [hideDuplicate, setHideDuplicate] = useState(false);
+  const [hideWatched, setHideWatched] = useState(false);
+  const [design, setDesign] = useState(period === "0" ? "simple" : "calendar");
   const [movies, setMovies] = useState([]);
   const [isLoading, setLoading] = useState(false);
   const divRef = useRef<HTMLDivElement>(null);
@@ -26,6 +28,10 @@ const Home = () => {
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault(); // prevent page refresh
+
+    if (period === "0") {
+      setDesign("simple");
+    }
 
     if (!user) {
       alert("User is empty");
@@ -97,29 +103,94 @@ const Home = () => {
         </button>
       </form>
       <div className="input-hide-flex">
+        <span className="label-hide">Design: </span>
+        <label className="label-hide">
+          <input
+            className="input-hide"
+            type="radio"
+            name="design"
+            value="simple"
+            checked={"simple" === design}
+            onChange={(event) => setDesign(event.target.value)}
+          />
+          Simple
+        </label>
+        {sessionStorage.getItem("period") !== "0" && (
+          <label className="label-hide">
+            <input
+              className="input-hide"
+              type="radio"
+              name="design"
+              value="calendar"
+              checked={"calendar" === design}
+              onChange={(event) => setDesign(event.target.value)}
+            />
+            Calendar
+          </label>
+        )}
+      </div>
+      <div className="input-hide-flex">
+        <span className="label-hide">Hide: </span>
         <label className="label-hide">
           <input
             className="input-hide"
             type="checkbox"
             onChange={(event) => setHideRating(event.target.checked)}
           />
-          Hide Rating
+          Rating
         </label>
+        {design !== "calendar" && (
+          <label className="label-hide">
+            <input
+              className="input-hide"
+              type="checkbox"
+              onChange={(event) => setHideDuplicate(event.target.checked)}
+            />
+            Duplicate
+          </label>
+        )}
         <label className="label-hide">
           <input
             className="input-hide"
             type="checkbox"
-            onChange={(event) => setHideDuplicate(event.target.checked)}
+            onChange={(event) => setHideWatched(event.target.checked)}
           />
-          Hide Duplicate
+          Nº Watched
         </label>
       </div>
+
       {isLoading && <div className="loading"></div>}
+
       <div ref={divRef} className="download-div">
+        <div
+          className={
+            design === "calendar" ? "calendar-header" : "films-watched-header"
+          }
+        >
+          {design === "calendar" && movies.length >= 1 && (
+            <span className="calendar-period">
+              {month[Number(sessionStorage.getItem("period"))]
+                .substring(0, 3)
+                .toUpperCase()}
+            </span>
+          )}
+          {!hideWatched && movies.length >= 1 && (
+            <span className="films-watched">
+              {movies.length} Films Watched{" "}
+            </span>
+          )}
+          {design === "calendar" && movies.length >= 1 && (
+            <span className="calendar-year">
+              {sessionStorage.getItem("year")}
+            </span>
+          )}
+        </div>
+
         <MovieGroup
           movies={movies}
           hideRating={hideRating}
           hideDuplicate={hideDuplicate}
+          design={design}
         />
         {movies.length >= 1 && (
           <span className="collage-text">made with collageboxd.vercel.app</span>
