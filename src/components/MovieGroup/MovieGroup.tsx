@@ -47,7 +47,7 @@ function MovieGroup({ movies, hideRating, hideDuplicate, design }: Props) {
     return grid;
   }
 
-  function flexMovie(length: number, design: string) {
+  function flexMovie(length: number) {
     let flex = "";
     if (length === 1) {
       flex = "flex-movie-1";
@@ -66,7 +66,7 @@ function MovieGroup({ movies, hideRating, hideDuplicate, design }: Props) {
   }
 
   function addSafari(tag: string) {
-    if (IS_SAFARI) {
+    if (IS_SAFARI && design === "calendar") {
       tag += "-safari";
     }
     return tag;
@@ -80,7 +80,7 @@ function MovieGroup({ movies, hideRating, hideDuplicate, design }: Props) {
             {item.error ? (
               <div className="error">{item.error}</div>
             ) : (
-              <div className={flexMovie(movies.length, design)}>
+              <div className={flexMovie(movies.length)}>
                 {design === "calendar" && (
                   <span className="calendar-number">{item.day}</span>
                 )}
