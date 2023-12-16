@@ -21,14 +21,16 @@
   column-gap: 1%;
 }
 
-.moviePoster {
+.moviePoster,
+.moviePoster-safari {
   border-radius: 3%;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.no-poster {
+.no-poster,
+.no-poster-safari {
   background: black;
   border-radius: 5px;
   padding: 2%;
@@ -61,22 +63,38 @@
   width: 18.4%;
 }
 
-.flex-movie-border {
+.flex-movie-border,
+.flex-movie-border-safari {
   border: 1px solid #556677;
   padding: 0px 8%;
 }
 
-.grid-rating {
+.flex-movie-border-safari {
+  padding: 0px 0px;
+  align-items: center;
+}
+
+.grid-rating,
+.grid-rating-safari {
   margin-top: 2%;
   margin-bottom: 10%;
 }
 
 .grid-rating,
-.grid-no-rating {
+.grid-no-rating,
+.grid-rating-safari,
+.grid-no-rating-safari {
   display: grid;
   align-items: start;
   gap: 1%;
   grid-template-columns: repeat(6, 1fr) 0.5fr;
+}
+
+.moviePoster-safari,
+.grid-rating-safari,
+.no-poster-safari,
+.grid-no-rating-safari {
+  width: 84%;
 }
 
 .error {

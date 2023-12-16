@@ -134,6 +134,7 @@ input {
 
 .films-watched {
   padding-bottom: 0.5%;
+  text-wrap: nowrap;
 }
 
 .films-watched-header {

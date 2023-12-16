@@ -1,4 +1,5 @@
 import Rating from "../Rating/Rating";
+import { IS_SAFARI } from "../../utils";
 import "./MovieGroup.css";
 
 interface Props {
@@ -55,9 +56,20 @@ function MovieGroup({ movies, hideRating, hideDuplicate, design }: Props) {
     }
 
     if (design === "calendar") {
-      flex += " flex-movie-border";
+      if (IS_SAFARI) {
+        flex += " flex-movie-border-safari";
+      } else {
+        flex += " flex-movie-border";
+      }
     }
     return flex;
+  }
+
+  function addSafari(tag: string) {
+    if (IS_SAFARI) {
+      tag += "-safari";
+    }
+    return tag;
   }
 
   return (
@@ -75,11 +87,11 @@ function MovieGroup({ movies, hideRating, hideDuplicate, design }: Props) {
                 {item.moviePoster ? (
                   <img
                     alt={item.movieName}
-                    className="moviePoster"
+                    className={addSafari("moviePoster")}
                     src={`https://image.tmdb.org/t/p/w500${item.moviePoster}`}
                   />
                 ) : (
-                  <div className="no-poster">
+                  <div className={addSafari("no-poster")}>
                     <span
                       className={
                         movies.length >= 50
@@ -91,7 +103,13 @@ function MovieGroup({ movies, hideRating, hideDuplicate, design }: Props) {
                     </span>
                   </div>
                 )}
-                <div className={!hideRating ? "grid-rating" : "grid-no-rating"}>
+                <div
+                  className={
+                    !hideRating
+                      ? addSafari("grid-rating")
+                      : addSafari("grid-no-rating")
+                  }
+                >
                   <Rating
                     contStars={hideRating ? 0 : item.movieRating}
                     isHalf={hideRating ? false : item.isHalf}
