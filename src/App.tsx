@@ -6,6 +6,8 @@ import Footer from "./components/Footer/Footer";
 import Contact from "./pages/Contact";
 import "./App.css";
 
+/*000*/
+
 const App = () => {
   return (
     <>
