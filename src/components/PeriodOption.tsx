@@ -4,7 +4,7 @@ interface Props {
   year: string;
 }
 
-const PeriodOption = ({ year }: Props) => {
+function PeriodOption({ year }: Props) {
   const date = new Date();
   const dateI = year === String(date.getFullYear()) ? date.getMonth() : 11;
 
@@ -18,6 +18,6 @@ const PeriodOption = ({ year }: Props) => {
       {item}
     </option>
   ));
-};
+}
 
 export default PeriodOption;

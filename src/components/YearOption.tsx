@@ -1,4 +1,4 @@
-const YearOption = () => {
+function YearOption() {
   const date = new Date();
   let year = date.getFullYear();
   const option = [];
@@ -13,6 +13,6 @@ const YearOption = () => {
       {item}
     </option>
   ));
-};
+}
 
 export default YearOption;

@@ -6,12 +6,12 @@ interface Props {
   children: ReactNode;
 }
 
-const A = ({ href, children }: Props) => {
+function A({ href, children }: Props) {
   return (
     <a className="anchor" href={href} target="_blank">
       {children}
     </a>
   );
-};
+}
 
 export default A;

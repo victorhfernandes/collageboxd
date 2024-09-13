@@ -6,9 +6,7 @@ import Footer from "./components/Footer/Footer";
 import Contact from "./pages/Contact";
 import "./App.css";
 
-/*000*/
-
-const App = () => {
+function App() {
   return (
     <>
       <NavBar />
@@ -20,6 +18,6 @@ const App = () => {
       <Footer />
     </>
   );
-};
+}
 
 export default App;

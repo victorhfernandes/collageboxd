@@ -1,10 +1,10 @@
 import "./Separator.css";
 
-const Separator = () => {
+function Separator() {
   return (
     <div className="separator">
       <hr />
     </div>
   );
-};
+}
 export default Separator;

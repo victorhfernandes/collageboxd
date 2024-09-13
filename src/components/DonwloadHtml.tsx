@@ -9,7 +9,7 @@ interface Props {
   year: string;
 }
 
-const DonwloadHtml = ({ innerRef, user, period, year }: Props) => {
+function DonwloadHtml({ innerRef, user, period, year }: Props) {
   const ref = innerRef;
 
   const onButtonClick = useCallback(async () => {
@@ -51,6 +51,6 @@ const DonwloadHtml = ({ innerRef, user, period, year }: Props) => {
       </button>
     </div>
   );
-};
+}
 
 export default DonwloadHtml;

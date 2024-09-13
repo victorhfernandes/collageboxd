@@ -7,7 +7,7 @@ import { FormEvent, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { IS_SAFARI, month } from "../../utils";
 
-const Home = () => {
+function Home() {
   const date = new Date();
   const [user, setUser] = useState(sessionStorage.getItem("user") || "");
   const [period, setPeriod] = useState(
@@ -26,7 +26,7 @@ const Home = () => {
 
   const url = import.meta.env.VITE_API_URL;
 
-  const handleSubmit = async (event: FormEvent) => {
+  async function handleSubmit(event: FormEvent) {
     event.preventDefault(); // prevent page refresh
 
     if (period === "0") {
@@ -66,7 +66,7 @@ const Home = () => {
         setLoading(false);
       }
     }
-  };
+  }
 
   return (
     <div className="home-containner">
@@ -214,6 +214,6 @@ const Home = () => {
       )}
     </div>
   );
-};
+}
 
 export default Home;

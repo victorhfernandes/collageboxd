@@ -11,7 +11,7 @@ interface Props {
   movieName: string;
 }
 
-const Stars = ({ contStars, isHalf, isLiked, movieName }: Props) => {
+function Stars({ contStars, isHalf, isLiked, movieName }: Props) {
   const stars: string[] = [];
   let i: number;
 
@@ -56,6 +56,6 @@ const Stars = ({ contStars, isHalf, isLiked, movieName }: Props) => {
   return stars.map((item, index) => (
     <img key={index} className={item} src={pickImage(item)} />
   ));
-};
+}
 
 export default Stars;

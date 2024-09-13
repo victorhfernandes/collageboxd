@@ -3,7 +3,7 @@ import Anchor from "../Anchor/Anchor";
 import Separator from "../../components/Separator/Separator";
 import { Link } from "react-router-dom";
 
-const Footer = () => {
+function Footer() {
   return (
     <>
       <Separator />
@@ -29,5 +29,5 @@ const Footer = () => {
       </footer>
     </>
   );
-};
+}
 export default Footer;

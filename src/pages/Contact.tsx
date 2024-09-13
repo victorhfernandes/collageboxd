@@ -1,7 +1,7 @@
 import InfoItems from "../components/InfoItems/InfoItems";
 import Anchor from "../components/Anchor/Anchor";
 
-const Contact = () => {
+function Contact() {
   return (
     <div className="contact-containner">
       <InfoItems title="Contact Me">
@@ -24,6 +24,6 @@ const Contact = () => {
       </InfoItems>
     </div>
   );
-};
+}
 
 export default Contact;

@@ -1,7 +1,7 @@
 import Anchor from "../components/Anchor/Anchor";
 import InfoItems from "../components/InfoItems/InfoItems";
 
-const About = () => {
+function About() {
   return (
     <div className="about-containner">
       <InfoItems title="About Collageboxd">
@@ -60,6 +60,6 @@ const About = () => {
       </InfoItems>
     </div>
   );
-};
+}
 
 export default About;
