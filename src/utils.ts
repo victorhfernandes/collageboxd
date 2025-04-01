@@ -16,3 +16,29 @@ export const month = [
     "November",
     "December",
   ];
+
+  export const languages = [
+    { code : 'all', name : 'All' },
+    { code : 'zh', name : 'Chinese' },
+    { code : 'es', name : 'Spanish' },
+    { code : 'en', name : 'English' },
+    { code : 'hi', name : 'Hindi' },
+    { code : 'bn', name : 'Bengali' },
+    { code : 'pt', name : 'Portuguese' },
+    { code : 'ru', name : 'Russian' },
+    { code : 'ja', name : 'Japanese' },
+    { code : 'de', name : 'German' },
+    { code : 'fr', name : 'French' },
+    { code : 'ur', name : 'Urdu' },
+    { code : 'it', name : 'Italian' },
+    { code : 'fa', name : 'Persian' },
+    { code : 'tr', name : 'Turkish' },
+    { code : 'ta', name : 'Tamil' },
+    { code : 'te', name : 'Telugu' },
+    { code : 'vi', name : 'Vietnamese' },
+    { code : 'mr', name : 'Marathi' },
+    { code : 'ko', name : 'Korean' },
+    { code : 'pl', name : 'Polish' },
+    { code : 'uk', name : 'Ukrainian' },
+];
+

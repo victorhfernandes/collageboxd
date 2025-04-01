@@ -5,7 +5,7 @@ import YearOption from "../../components/YearOption";
 import "./Home.css";
 import { FormEvent, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import { IS_SAFARI, month } from "../../utils";
+import { IS_SAFARI, languages, month } from "../../utils";
 
 function Home() {
   const date = new Date();
@@ -15,6 +15,9 @@ function Home() {
   );
   const [year, setYear] = useState(
     sessionStorage.getItem("year") || String(date.getFullYear())
+  );
+  const [language, setLanguage] = useState(
+    sessionStorage.getItem("language") || "en"
   );
   const [hideRating, setHideRating] = useState(false);
   const [hideDuplicate, setHideDuplicate] = useState(false);
@@ -38,7 +41,8 @@ function Home() {
     } else if (
       user === sessionStorage.getItem("user") &&
       period === sessionStorage.getItem("period") &&
-      year === sessionStorage.getItem("year")
+      year === sessionStorage.getItem("year") &&
+      language === sessionStorage.getItem("language")
     ) {
       setLoading(true);
       setMovies([]);
@@ -50,12 +54,13 @@ function Home() {
       sessionStorage.setItem("user", user);
       sessionStorage.setItem("period", period);
       sessionStorage.setItem("year", year);
+      sessionStorage.setItem("language", language);
       setLoading(true);
       setMovies([]);
 
       try {
         const response = await fetch(
-          `${url}/api/${user.trim()}&${period}&${year}`
+          `${url}/api/${user.trim()}&${period}&${year}&${language}`
         );
         const json = await response.json();
         setMovies(json);
@@ -96,6 +101,17 @@ function Home() {
             onChange={(event) => setYear(event.target.value)}
           >
             <YearOption />
+          </select>
+          <select
+            className="select-period"
+            value={language}
+            onChange={(event) => setLanguage(event.target.value)}
+          >
+            {languages.map((item, index) => (
+              <option key={index} value={item.code}>
+                {item.name}
+              </option>
+            ))}
           </select>
         </div>
         <button disabled={isLoading} type="submit" className="button-submit">
