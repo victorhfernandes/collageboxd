@@ -17,7 +17,7 @@ function Home() {
     sessionStorage.getItem("year") || String(date.getFullYear())
   );
   const [language, setLanguage] = useState(
-    sessionStorage.getItem("language") || "en"
+    sessionStorage.getItem("language") || "all"
   );
   const [hideRating, setHideRating] = useState(false);
   const [hideDuplicate, setHideDuplicate] = useState(false);
